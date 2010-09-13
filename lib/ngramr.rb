@@ -21,6 +21,12 @@ class NGramSearcher
     end
   end
 
+  def makeindex
+    kvs.each do |k,v|
+      self[k] = v
+    end
+  end
+
   def search(q, lazy = false)
     keychain = nil
     (min..size).to_a.reverse.each do |n|
